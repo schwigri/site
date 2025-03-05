@@ -1,0 +1,30 @@
+---
+import Nav from "../components/Nav.astro";
+import { getLocale } from "../utils/i18n";
+import "../styles/global.css";
+import {getLocaleByPath, pathHasLocale} from "astro:i18n";
+
+interface Props {
+    readonly description: string;
+    readonly title: string;
+}
+
+const { description, title } = Astro.props;
+const locale = getLocale(Astro.url);
+---
+
+<html lang={locale}>
+    <head>
+        <meta charset="utf-8">
+        <title>{title}</title>
+        <meta content="width=device-width,initial-scale=1.0" name="viewport">
+        <meta content={description} name="description">
+    </head>
+    <body class:list={["bg-stone-100 dark:bg-stone-950", "bg-fixed bg-(image:--body-light) dark:bg-(image:--body-dark)", "bg-(length:--body)", "font-custom text-stone-800 dark:text-stone-200"]}>
+        <Nav />
+
+        <div id="content">
+            <slot />
+        </div>
+    </body>
+</html>

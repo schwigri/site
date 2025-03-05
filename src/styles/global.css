@@ -1,0 +1,9 @@
+@import "@fontsource/schibsted-grotesk/latin-400.css";
+@import "tailwindcss";
+
+@theme {
+    --body-dark: linear-gradient(182deg, transparent, transparent, #2e1065, transparent);
+    --body-light: linear-gradient(182deg, transparent, transparent, #ede9fe, transparent);
+    --body: 100% 100vh;
+    --font-custom: "Schibsted Grotesk", "M Plus 1", var(--font-sans);
+}

@@ -1,0 +1,27 @@
+{
+    "$schema": "https://json.schemastore.org/package.json",
+    "name": "@schwigri/site",
+    "version": "1.0.0",
+    "description": "Source code for my personal homepage",
+    "bugs": "https://github.com/schwigri/site/issues",
+    "license": "BSD-3-Clause",
+    "author": "Griffen Schwiesow",
+    "repository": "github:schwigri/site",
+    "scripts": {
+        "build": "astro build",
+        "dev": "astro dev",
+        "preview": "astro preview"
+    },
+    "dependencies": {
+        "@astrojs/node": "^9.1.2",
+        "@fontsource/m-plus-1": "^5.2.5",
+        "@fontsource/schibsted-grotesk": "^5.2.5",
+        "@tailwindcss/vite": "^4.0.9",
+        "astro": "^5.4.2",
+        "tailwindcss": "^4.0.9"
+    },
+    "devDependencies": {
+        "typescript": "^5.8.2"
+    },
+    "private": true
+}

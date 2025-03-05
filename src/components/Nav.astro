@@ -1,0 +1,48 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { getLocale } from "../utils/i18n";
+
+const locale = getLocale(Astro.url);
+const homeLabel = locale === "de" ? "Startseite"
+    : locale === "ja" ? "トップ"
+    : "Home";
+---
+
+<nav class:list={["p-4 md:p-8 lg:px-16", "sticky top-0", "flex justify-between"]}>
+    <ul class:list={["flex gap-2", "font-light font-mono text-sm"]}>
+        <li>
+            <a
+                aria-label={homeLabel}
+                class:list={[
+                    "px-2 py-1",
+                    "rounded backdrop-blur",
+                    "bg-stone-300/50 dark:bg-stone-700/50",
+                    "focus:bg-stone-300 dark:focus:bg-stone-700",
+                    "hover:bg-stone-300 dark:hover:bg-stone-700",
+                    "transition focus:transition-none",
+                ]}
+                href={getRelativeLocaleUrl(locale)}
+            >/</a>
+        </li>
+    </ul>
+
+    <ul class:list={["flex gap-2", "font-light font-mono text-sm"]}>
+        {["de", "en", "ja"].map((code) => (
+            <li>
+                <a
+                    aria-current={code === locale ? "true" : undefined}
+                    class:list={[
+                        "px-2 py-1",
+                        "rounded backdrop-blur",
+                        "bg-stone-300/50 dark:bg-stone-700/50",
+                        "focus:bg-stone-300 dark:focus:bg-stone-700",
+                        "hover:bg-stone-300 dark:hover:bg-stone-700",
+                        "transition focus:transition-none",
+                    ]}
+                    href={getRelativeLocaleUrl(code)}
+                    lang={code}
+                >{code.toUpperCase()}</a>
+            </li>
+        ))}
+    </ul>
+</nav>
