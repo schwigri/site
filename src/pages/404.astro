@@ -1,0 +1,26 @@
+---
+import { getLocale } from "../utils/i18n";
+import Document from "../layouts/Document.astro";
+
+const locale = getLocale(Astro.url);
+const title = locale === "de" ? "Aaber warum?"
+    : locale === "ja" ? "おっとっ！"
+    : "Whoops!";
+const description = locale === "de" ? "Diese Seite existiert nicht! Und doch sind Sie hier…"
+    : locale === "ja" ? "このページは存在しないようです。しかし、あなたが⋯"
+    : "This page does not exist! Yet, here you are…";
+---
+
+<Document
+    description={description}
+    title={title}
+>
+    <div class:list={["px-4 md:px-8 lg:px-16 py-8 md:py-16 lg:py-32"]}>
+        <h1 class:list={["relative leading-none font-normal", "text-6xl sm:text-7xl md:text-8xl lg:text-9xl"]}>
+            {title}
+        </h1>
+        <p class:list={["max-w-screen-md", "pt-8", "text-xl sm:text-2xl md:text-3xl lg:text-4xl"]}>
+            {description}
+        </p>
+    </div>
+</Document>
