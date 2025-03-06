@@ -7,8 +7,9 @@ import Document from "../layouts/Document.astro";
     title="Griffen Schwiesow — Designer, front-end developer and accessibility specialist"
 >
     <div class:list={["px-4 md:px-8 lg:px-16 py-8"]}>
-        <h1 class:list={["leading-none font-normal", "text-6xl sm:text-7xl md:text-8xl lg:text-9xl"]}>
-            Hello,<br>I'm Griffen!
+        <h1 class:list={["relative leading-none font-normal", "text-6xl sm:text-7xl md:text-8xl lg:text-9xl"]}>
+            <span class="sr-only">Hello, I'm Griffen!</span>
+            <span aria-hidden="true">Hello,<br>I'm Griffen!</span>
         </h1>
         <p class:list={["max-w-screen-md", "pt-8", "text-xl sm:text-2xl md:text-3xl lg:text-4xl"]}>
             I'm a designer and developer passionate about accessibility, internationalization and making the web a more beautiful space.
