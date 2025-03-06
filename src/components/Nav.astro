@@ -43,6 +43,7 @@ const languagesLabel = locale === "de" ? "Sprache"
             <li>
                 <a
                     aria-current={code === locale ? "true" : undefined}
+                    aria-label={code === "de" ? "Deutsch" : code === "ja" ? "日本語" : "English"}
                     class:list={[
                         "px-2 py-1",
                         "rounded backdrop-blur",
